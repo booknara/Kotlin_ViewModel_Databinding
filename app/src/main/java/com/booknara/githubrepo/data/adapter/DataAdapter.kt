@@ -1,10 +1,10 @@
-package com.example.githubrepo_livedata.data.adapter
+package com.booknara.githubrepo.data.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.githubrepo_livedata.databinding.RecyclerLayoutBinding
-import com.example.githubrepo_livedata.data.model.MyData
+import com.booknara.githubrepo.data.model.MyData
+import com.booknara.githubrepo.databinding.RecyclerLayoutBinding
 
 class DataAdapter: RecyclerView.Adapter<DataAdapter.MyViewHolder>() {
     var items = ArrayList<MyData>()

@@ -1,4 +1,4 @@
-package com.example.githubrepo_livedata.data.model
+package com.booknara.githubrepo.data.model
 
 data class GithubResponseModel(val items: ArrayList<MyData>)
 

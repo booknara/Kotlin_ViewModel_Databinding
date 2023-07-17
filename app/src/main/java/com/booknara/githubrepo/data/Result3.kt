@@ -1,4 +1,4 @@
-package com.example.githubrepo_livedata.data
+package com.booknara.githubrepo.data
 
 sealed class Result3<out T : Any>()
 {

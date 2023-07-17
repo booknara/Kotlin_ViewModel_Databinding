@@ -1,4 +1,4 @@
-package com.example.githubrepo_livedata
+package com.booknara.githubrepo
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,15 +1,13 @@
-package com.example.githubrepo_livedata.viewModel
+package com.booknara.githubrepo.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.githubrepo_livedata.data.adapter.DataAdapter
-import com.example.githubrepo_livedata.data.GithubRepository
-import com.example.githubrepo_livedata.data.Result
-import com.example.githubrepo_livedata.data.Result2
-import com.example.githubrepo_livedata.data.Result3
-import com.example.githubrepo_livedata.data.model.GithubResponseModel
-import com.example.githubrepo_livedata.data.model.MyData
+import com.booknara.githubrepo.data.GithubRepository
+import com.booknara.githubrepo.data.Result3
+import com.booknara.githubrepo.data.adapter.DataAdapter
+import com.booknara.githubrepo.data.model.GithubResponseModel
+import com.booknara.githubrepo.data.model.MyData
 import retrofit2.Call
 import retrofit2.Response
 

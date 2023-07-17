@@ -3,7 +3,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.githubrepo_livedata.viewModel.MainViewModel" />
+            type="com.booknara.githubrepo.viewModel.MainViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"

@@ -1,4 +1,4 @@
-package com.example.githubrepo_livedata
+package com.booknara.githubrepo
 
 import org.junit.Test
 

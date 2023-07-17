@@ -1,4 +1,4 @@
-package com.example.githubrepo_livedata.Network
+package com.booknara.githubrepo.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

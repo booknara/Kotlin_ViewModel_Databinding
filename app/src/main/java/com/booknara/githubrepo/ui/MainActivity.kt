@@ -1,8 +1,8 @@
-package com.example.githubrepo_livedata.ui
+package com.booknara.githubrepo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.githubrepo_livedata.R
+import com.booknara.githubrepo.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
