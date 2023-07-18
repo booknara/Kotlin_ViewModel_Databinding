@@ -1,7 +1,6 @@
 package com.booknara.githubrepo.data
 
-sealed class Result3<out T : Any>()
-{
+sealed class Result3<out T : Any> {
     data class Success<out T : Any>(val data: T) : Result3<T>()
     data class Error(val exception: Exception) : Result3<Nothing>()
 

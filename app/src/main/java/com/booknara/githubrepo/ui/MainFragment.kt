@@ -5,19 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.booknara.githubrepo.data.Result3
 import com.booknara.githubrepo.BR
 import com.booknara.githubrepo.viewModel.MainViewModel
-import com.booknara.githubrepo.viewModel.MainViewModelFactory
 import com.booknara.githubrepo.databinding.FragmentMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainFragment : Fragment() {
 
-    private lateinit var mainViewModel: MainViewModel
+    private val mainViewModel: MainViewModel by viewModels()
     private lateinit var _binding: FragmentMainBinding
 
     private val binding get() = _binding
@@ -33,8 +34,6 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        mainViewModel = ViewModelProvider(this, MainViewModelFactory())[MainViewModel::class.java]
 
         binding.setVariable(BR.viewModel, mainViewModel)
         binding.executePendingBindings()

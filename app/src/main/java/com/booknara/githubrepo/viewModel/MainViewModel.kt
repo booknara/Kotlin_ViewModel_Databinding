@@ -3,19 +3,21 @@ package com.booknara.githubrepo.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.booknara.githubrepo.data.GithubRepository
+import com.booknara.githubrepo.network.GithubRepository
 import com.booknara.githubrepo.data.Result3
 import com.booknara.githubrepo.data.adapter.DataAdapter
 import com.booknara.githubrepo.data.model.GithubResponseModel
 import com.booknara.githubrepo.data.model.MyData
+import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Response
+import javax.inject.Inject
 
-class MainViewModel(private val repository: GithubRepository) : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(private val repository: GithubRepository) : ViewModel() {
 
     private val _githubResponseData = MutableLiveData<Result3<GithubResponseModel>>()
     val githubResponseData : LiveData<Result3<GithubResponseModel>> = _githubResponseData
-
 
     var dataAdapter: DataAdapter = DataAdapter()
 
@@ -30,7 +32,6 @@ class MainViewModel(private val repository: GithubRepository) : ViewModel() {
         dataAdapter.setData(data)
         dataAdapter.notifyDataSetChanged()
     }
-
 
     fun makeApiCall(input: String?=null) {
         repository.getAllRepository("kotlin").enqueue(object : retrofit2.Callback<GithubResponseModel> {
