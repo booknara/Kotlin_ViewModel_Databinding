@@ -9,8 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.booknara.githubrepo.data.Result3
 import com.booknara.githubrepo.BR
+import com.booknara.githubrepo.data.BaseResponse
 import com.booknara.githubrepo.viewModel.MainViewModel
 import com.booknara.githubrepo.databinding.FragmentMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,20 +44,20 @@ class MainFragment : Fragment() {
             addItemDecoration(decoration)
         }
 
-
         initObserver()
-
     }
 
     private fun initObserver() {
-
         mainViewModel.githubResponseData.observe(viewLifecycleOwner, Observer {result ->
             when (result) {
-                is Result3.Success -> {
+                is BaseResponse.Success -> {
                     binding.progressbar.visibility = View.INVISIBLE
                     mainViewModel.setAdapterData(result.data.items)
                 }
-                is Result3.Error -> {
+                is BaseResponse.Loading -> {
+                    binding.progressbar.visibility = View.VISIBLE
+                }                
+                is BaseResponse.Error -> {
                     binding.progressbar.visibility = View.INVISIBLE
                 }
             }

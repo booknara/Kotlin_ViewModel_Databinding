@@ -3,8 +3,8 @@ package com.booknara.githubrepo.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.booknara.githubrepo.data.BaseResponse
 import com.booknara.githubrepo.network.GithubRepository
-import com.booknara.githubrepo.data.Result3
 import com.booknara.githubrepo.data.adapter.DataAdapter
 import com.booknara.githubrepo.data.model.GithubResponseModel
 import com.booknara.githubrepo.data.model.MyData
@@ -16,8 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val repository: GithubRepository) : ViewModel() {
 
-    private val _githubResponseData = MutableLiveData<Result3<GithubResponseModel>>()
-    val githubResponseData : LiveData<Result3<GithubResponseModel>> = _githubResponseData
+    private val _githubResponseData = MutableLiveData<BaseResponse<GithubResponseModel>>()
+    val githubResponseData : LiveData<BaseResponse<GithubResponseModel>> = _githubResponseData
 
     var dataAdapter: DataAdapter = DataAdapter()
 
@@ -47,7 +47,7 @@ class MainViewModel @Inject constructor(private val repository: GithubRepository
                     null else _githubResponseData.value = response.body()*/
                 if (response.isSuccessful) {
                     /*_githubResponseData.postValue(Result2.Success(response.body()!!))*/
-                    _githubResponseData.postValue(Result3.Success(response.body()!!))
+                    _githubResponseData.postValue(BaseResponse.Success(response.body()!!))
                 }
 
             }
