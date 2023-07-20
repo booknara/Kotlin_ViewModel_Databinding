@@ -6,7 +6,7 @@
     <data>
         <variable
             name="gitHubData"
-            type="com.booknara.githubrepo.data.model.MyData" />
+            type="com.booknara.githubrepo.network.model.Item" />
     </data>
 
     <LinearLayout

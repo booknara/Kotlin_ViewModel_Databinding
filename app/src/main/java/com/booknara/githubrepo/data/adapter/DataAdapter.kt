@@ -3,13 +3,13 @@ package com.booknara.githubrepo.data.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.booknara.githubrepo.data.model.MyData
+import com.booknara.githubrepo.network.model.Item
 import com.booknara.githubrepo.databinding.RecyclerLayoutBinding
 
 class DataAdapter: RecyclerView.Adapter<DataAdapter.MyViewHolder>() {
-    var items = ArrayList<MyData>()
+    var items = ArrayList<Item>()
 
-    fun setData(data : ArrayList<MyData>){
+    fun setData(data : ArrayList<Item>){
         this.items = data
     }
 
@@ -30,7 +30,7 @@ class DataAdapter: RecyclerView.Adapter<DataAdapter.MyViewHolder>() {
 
     class MyViewHolder(val binding: RecyclerLayoutBinding):RecyclerView.ViewHolder(binding.root){
 
-        fun bind(data: MyData){
+        fun bind(data: Item){
 
             binding.gitHubData = data
             binding.executePendingBindings()
